@@ -1,5 +1,6 @@
 var React = require('react');
 var TypeText = require('../components/TypeText');
+var PrintedText = require('../components/PrintedText');
 
 var TypeTextContainer = React.createClass({
 	getInitialState: function() {
@@ -16,9 +17,14 @@ var TypeTextContainer = React.createClass({
 
 	render: function() {
 		return (
-			<TypeText
-			onUpdateText={this.handleUpdateText}
-			text={this.state.text} />
+			<div>
+				<TypeText
+				onUpdateText={this.handleUpdateText}
+				text={this.state.text} />
+
+				<PrintedText
+				text={this.state.text} />
+			</div>
 		);
 	}
 });
