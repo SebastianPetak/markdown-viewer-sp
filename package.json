@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
   },
   "author": "Sebastian Petak",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
+    "dompurify": "^0.8.5",
     "marked": "^0.3.6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

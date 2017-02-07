@@ -1,6 +1,7 @@
 var React = require('react');
 var TypeText = require('../components/TypeText');
 var PrintedText = require('../components/PrintedText');
+var DOMPurify = require('dompurify');
 var marked = require('marked');
 
 var TypeTextContainer = React.createClass({
@@ -8,15 +9,21 @@ var TypeTextContainer = React.createClass({
 		var text = '#This is the initial text `test`.';
 		return {
 			text: text,
-			markedText: marked(text, {sanitize: true})
+			//markedText: {__html: DOMPurify.sanitize(marked(text))}
 		};
 	},
 
 	handleUpdateText: function(e) {
 		this.setState({
 			text: e.target.value,
-			markedText: marked(this.state.text, {sanitize: true})
+			//markedText: {__html: DOMPurify.sanitize(marked(this.state.text))}
 		});
+	},
+
+	handleMarkedText: function() {
+		return (
+			{__html: DOMPurify.sanitize(marked(this.state.text))}
+		);
 	},
 
 	render: function() {
@@ -27,7 +34,7 @@ var TypeTextContainer = React.createClass({
 				text={this.state.text} />
 
 				<PrintedText
-				markedText={this.state.markedText} />
+				getMarkedText={this.handleMarkedText} />
 			</div>
 		);
 	}

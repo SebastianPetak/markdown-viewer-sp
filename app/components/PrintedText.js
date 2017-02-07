@@ -2,7 +2,7 @@ var React = require('react');
 
 var PrintedText = function(props) {
 	return (
-		<div>{props.markedText}
+		<div dangerouslySetInnerHTML={props.getMarkedText()}>
 		</div>
 	);
 };
