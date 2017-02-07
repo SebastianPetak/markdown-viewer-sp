@@ -1,22 +1,24 @@
 var React = require('react');
 var TypeText = require('../components/TypeText');
 var PrintedText = require('../components/PrintedText');
+// DOMPurify prevents XSS attacks, marked is for the github flavored markdown
 var DOMPurify = require('dompurify');
 var marked = require('marked');
 
-var TypeTextContainer = React.createClass({
+var TextContainer = React.createClass({
 	getInitialState: function() {
-		var text = '#This is the initial text `test`.';
+		var text = '# H1\n## H2\n## H3\n*Emphasis* , aka _italics\n**Strong** ' +
+			'emphasis, aka __bold__**\n_Combined_**\n1. lists\n' +
+			'  * unordered sub-list\n2. more list\n  1. Ordered sub-list\n\n' +
+			'`inline code`\n\n> Blockquotes';
 		return {
 			text: text,
-			//markedText: {__html: DOMPurify.sanitize(marked(text))}
 		};
 	},
 
 	handleUpdateText: function(e) {
 		this.setState({
 			text: e.target.value,
-			//markedText: {__html: DOMPurify.sanitize(marked(this.state.text))}
 		});
 	},
 
@@ -40,4 +42,4 @@ var TypeTextContainer = React.createClass({
 	}
 });
 
-module.exports = TypeTextContainer;
+module.exports = TextContainer;
