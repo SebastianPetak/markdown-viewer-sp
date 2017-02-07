@@ -1,17 +1,21 @@
 var React = require('react');
 var TypeText = require('../components/TypeText');
 var PrintedText = require('../components/PrintedText');
+var marked = require('marked');
 
 var TypeTextContainer = React.createClass({
 	getInitialState: function() {
+		var text = '#This is the initial text `test`.';
 		return {
-			text: 'This is the initial text'
+			text: text,
+			markedText: marked(text, {sanitize: true})
 		};
 	},
 
 	handleUpdateText: function(e) {
 		this.setState({
-			text: e.target.value
+			text: e.target.value,
+			markedText: marked(this.state.text, {sanitize: true})
 		});
 	},
 
@@ -23,7 +27,7 @@ var TypeTextContainer = React.createClass({
 				text={this.state.text} />
 
 				<PrintedText
-				text={this.state.text} />
+				markedText={this.state.markedText} />
 			</div>
 		);
 	}
