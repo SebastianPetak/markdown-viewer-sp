@@ -1,10 +1,11 @@
 var React = require('react');
+var textAreaStyles = require('../styles/index.js').textAreaStyles;
 
 var TypeText = function(props) {
 	return (
 		<div>
-			<textarea rows="4" cols="50" autofocus value={props.text}
-			onChange={props.onUpdateText}></textarea>
+			<textarea autofocus value={props.text}
+			onChange={props.onUpdateText} style={textAreaStyles}></textarea>
 		</div>
 	);
 };
