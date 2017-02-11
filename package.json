@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/SebastianPetak/markdown-viewer-sp"
-	},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SebastianPetak/markdown-viewer-sp"
+  },
   "scripts": {
     "bundle": "webpack -p",
-		"start": "node server.js",
+    "start": "node server.js",
     "startdev": "webpack-dev-server"
   },
   "author": "Sebastian Petak",
@@ -25,6 +25,7 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
+    "babel-preset-es2015": "^6.22.0",
     "dompurify": "^0.8.5",
     "marked": "^0.3.6",
     "react": "^15.4.2",
