@@ -1,4 +1,7 @@
 # Markdown Previewer
+
+Visit the application [here](https://markdown-viewer-sp.herokuapp.com/)
+
 ## Goals
   * __User Story:__ I can type GitHub-flavored Markdown into a text area.
 
@@ -11,11 +14,14 @@
 
 ## Usage
 
-* run `npm run startdev` to start a development environment using port 8080.  
+### Development environment
 
+Run `npm run startdev` to start a development environment using port 8080.  
 
-1. run `npm run bundle` to create your dist/ folder (your production environment).
-2. run `npm run start` to run your production environment.
+### Production environment
+
+1. Run `npm run bundle` to create your dist/ folder (your production environment).
+2. Run `npm run start` to run your production environment.
 
 ## Built with
 
